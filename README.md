@@ -31,7 +31,7 @@ POST https://api.st.link/angelia/2019ncov
             "timestamp": 1579478400
         }
     ],
-    "hotpot": [
+    "hotspot": [
         {
             "area": "武汉",
             "lng": 30.592849,
