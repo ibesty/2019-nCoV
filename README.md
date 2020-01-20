@@ -8,6 +8,7 @@ POST https://api.st.link/angelia/2019ncov
 - timestamp：服务端当前时间戳
 - news：最新的50条新闻
 - hotspot：用于绘制地图点包含流动方向的坐标和数量
+- areas：地理坐标
 
 ###### 返回结果样例：
 ```
@@ -54,6 +55,20 @@ POST https://api.st.link/angelia/2019ncov
             },
             "num": 2
         }
-    ]
+    ],
+    "areas": {
+        "武汉": {
+            "lng": 30.592849,
+            "lat": 114.305539
+        },
+        "深圳": {
+            "lng": 22.543096,
+            "lat": 114.057865
+        },
+        "北京": {
+            "lng": 116.391433,
+            "lat": 39.901843
+        }
+    }
 }
 ```
