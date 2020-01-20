@@ -8,7 +8,6 @@ POST https://api.st.link/angelia/2019ncov
 - timestamp：服务端当前时间戳
 - news：最新的50条新闻
 - hotspot：用于绘制地图点包含流动方向的坐标和数量
-- areas：地理坐标
 
 ###### 返回结果样例：
 ```
