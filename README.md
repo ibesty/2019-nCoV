@@ -1,16 +1,15 @@
-# 2019-nCoV
-武汉肺炎热点追踪
+### 2019-nCoV 武汉肺炎热点追踪
 
-# 数据接口
-请求方式：POST
-请求链接：[https://api.st.link/angelia/2019ncov](https://api.st.link/angelia/2019ncov "https://api.st.link/angelia/2019ncov")
-返回简要说明：
+### 数据接口
+###### 请求方式：
+POST https://api.st.link/angelia/2019ncov
+###### 返回说明：
 - errcode：错误码：0表示正常；-1表示错误
 - timestamp：服务端当前时间戳
 - news：最新的50条新闻
 - hotpot：用于绘制地图点聚合的坐标和数量
 
-返回结果样例：
+###### 返回结果样例：
 ```
 {
     "errcode": 0,
