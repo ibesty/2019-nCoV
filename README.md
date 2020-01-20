@@ -7,7 +7,7 @@ POST https://api.st.link/angelia/2019ncov
 - errcode：错误码：0表示正常；-1表示错误
 - timestamp：服务端当前时间戳
 - news：最新的50条新闻
-- hotpot：用于绘制地图点聚合的坐标和数量
+- hotspot：用于绘制地图点聚合的坐标和数量
 
 ###### 返回结果样例：
 ```
