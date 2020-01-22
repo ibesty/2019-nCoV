@@ -430,11 +430,11 @@ class Index extends React.Component {
               <span style={{color: '#ffffff'}}>确诊:</span>
               { statusObject['确诊'] }
             </span>
-            &nbsp;&nbsp;
-            <span style={{color: '#BC5221'}}>
-              <span style={{color: '#ffffff'}}>疑似:</span>
-              { statusObject['疑似'] }
-            </span>
+            {/*&nbsp;&nbsp;*/}
+            {/*<span style={{color: '#BC5221'}}>*/}
+            {/*  <span style={{color: '#ffffff'}}>疑似:</span>*/}
+            {/*  { statusObject['疑似'] }*/}
+            {/*</span>*/}
             &nbsp;&nbsp;
             <span style={{color: '#B00000'}}>
               <span style={{color: '#ffffff'}}>死亡:</span>
