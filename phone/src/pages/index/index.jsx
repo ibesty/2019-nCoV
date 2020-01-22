@@ -14,7 +14,7 @@ import Timeline from '../../components/timeline/index'
 const api = 'https://api.st.link/angelia/2019ncov'
 
 function getCityCoord(name) {
-  const city = window.citys.find(c => c.name.indexOf(name) === 0)
+  const city = window.citys.find(c => c.name.indexOf(name+'市') === 0 || c.name.indexOf(name+'县') === 0)
   if (city) {
     return city.lnglat
   }
@@ -24,9 +24,9 @@ function getCityCoord(name) {
 function setCitysCount(spots) {
   let citys = []
   for (let s of spots) {
-    const findedCity = citys.find(c => c.name === s.to)
+    const findedCity = citys.find(c => c.name.indexOf(s.to) > 0)
     if (findedCity) {
-      findedCity.symbolSize = s.num
+      findedCity.symbolSize = Math.min(s.num, 8)
     } else {
       citys.push({
         name: s.from,
@@ -42,7 +42,7 @@ function setCitysCount(spots) {
     citys.push({
       name: s.to,
       value: getCityCoord(s.to),
-      "symbolSize": s.num,
+      "symbolSize": Math.min(s.num, 8),
       "itemStyle": {
         "normal": {
           "color": "red"
@@ -211,9 +211,9 @@ export default () => {
     <div className={styles['header']}>
       <div className={styles['title']}>武汉新型冠状病毒肺炎热点追踪</div>
       <div className={styles['status']}>
-        <div>确诊: {status['确诊']}</div>
+        <div>确诊：{status['确诊']}</div>
         {/* <div>疑似: {status['疑似']}</div> */}
-        <div>死亡: {status['死亡']}</div>
+        <div>死亡：{status['死亡']}</div>
       </div>
     </div>
       <ReactEcharts
