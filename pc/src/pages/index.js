@@ -256,7 +256,7 @@ class Index extends React.Component {
     cityData.forEach(function (item, i) {
       //console.log(item,i);
       series.push({
-          name: item[0] + ' Top10',
+          name: item[0],
           type: 'lines',
           zlevel: 1,
           effect: {
@@ -276,7 +276,7 @@ class Index extends React.Component {
           data: convertData(item[1])
         },
         {
-          name: item[0] + ' Top10',
+          name: item[0],
           type: 'lines',
           zlevel: 2,
           symbol: ['none', 'arrow'],
@@ -290,7 +290,7 @@ class Index extends React.Component {
           },
           lineStyle: {
             normal: {
-              color: color[i],
+              color: '#B00000',
               width: 1,
               opacity: 0.6,
               curveness: 0.2
@@ -299,7 +299,7 @@ class Index extends React.Component {
           data: convertData(item[1])
         },
         {
-          name: item[0] + ' Top10',
+          name: item[0],
           type: 'effectScatter',
           coordinateSystem: 'geo',
           zlevel: 2,
