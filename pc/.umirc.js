@@ -4,12 +4,12 @@ export default {
   history: 'hash',
   publicPath: './',
   treeShaking: true,
-  proxy: {
-    '/2019ncov': {
-      target: 'https://api.st.link/angelia',
-      changeOrigin: true
-    }
-  },
+  // proxy: {
+    // '/2019ncov': {
+    //   target: 'https://api.st.link/angelia',
+    //   changeOrigin: true
+    // }
+  // },
   routes: [
     {
       path: '/',

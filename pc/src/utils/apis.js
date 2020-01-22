@@ -2,7 +2,7 @@ import request from './request.js';
 
 export function getData() {
     return request({
-        url: '/2019ncov',
+        url: 'https://api.st.link/angelia',
         method: 'post'
     });
 }
