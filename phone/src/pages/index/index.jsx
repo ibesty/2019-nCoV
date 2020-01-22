@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import axois from 'axios'
 
 import echarts from 'echarts'
@@ -7,11 +7,11 @@ import ReactEcharts from "echarts-for-react"
 
 import styles from './index.module.scss'
 
-import mockGet from './data'
+// import mockGet from './data'
 
 import Timeline from '../../components/timeline/index'
 
-const api = '/angelia/2019ncov'
+const api = 'https://api.st.link/angelia/2019ncov'
 
 function getCityCoord(name) {
   const city = window.citys.find(c => c.name.indexOf(name) === 0)
@@ -55,15 +55,29 @@ function setCitysCount(spots) {
 }
 
 export default () => {
-  const map = useRef(null)
-  const layer = useRef(null)
   const [spots, setSpots] = useState([])
   const [news, setNews] = useState([])
   const [status, setStatus] = useState({})
 
+  const fetchData = useCallback(async () => {
+    try {
+      const { data } = await axois.post(api)
+      // const data = await mockGet()
+      // console.log(data)
+      if (data.errcode === 0) {
+        const { news, hotspot, status } = data
+        setNews(news)
+        setSpots(hotspot)
+        setStatus(status)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  })
+
   useEffect(() => {
     fetchData()
-  }, [])
+  }, [fetchData])
 
   const getOption = useCallback((hotspot = []) => {
     const routes = hotspot.map(spot => {
@@ -78,7 +92,7 @@ export default () => {
     });
 
     const citys = setCitysCount(spots)
-    console.log(citys)
+    // console.log(citys)
 
     let option = {
       backgroundColor: '#404a59',
@@ -191,22 +205,6 @@ export default () => {
     // console.log(option)
     return option
   }, [spots])
-
-  const fetchData = useCallback(async () => {
-    try {
-      const { data } = await axois.post(api)
-      // const data = await mockGet()
-      console.log(data)
-      if (data.errcode === 0) {
-        const { news, hotspot, status } = data
-        setNews(news)
-        setSpots(hotspot)
-        setStatus(status)
-      }
-    } catch (error) {
-      console.error(error)
-    }
-  })
 
   return (
     <div className={styles['index']}>
