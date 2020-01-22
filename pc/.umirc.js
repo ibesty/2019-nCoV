@@ -1,6 +1,7 @@
 
 // ref: https://umijs.org/config/
 export default {
+  publicPath: './',
   treeShaking: true,
   proxy: {
     '/2019ncov': {
