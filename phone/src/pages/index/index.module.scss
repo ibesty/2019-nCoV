@@ -1,0 +1,33 @@
+.index {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #404a59;
+
+  .header {
+    // height: ;
+    height: 48px;
+    width: 100%;
+    background-color: darken($color: #404a59, $amount: 10);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    color: #fff;
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .status {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+
+  .map {
+    height: calc(45vh - 48px) !important;
+    width: 100vw;
+  }
+}

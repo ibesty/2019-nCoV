@@ -1,0 +1,16 @@
+.timeline-wrapper {
+  box-sizing: border-box;
+  height: 55vh;
+  overflow: auto;
+  width: 100%;
+
+  padding: 20px;
+  color: #fff;
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: #4169e2;
+  }
+}
