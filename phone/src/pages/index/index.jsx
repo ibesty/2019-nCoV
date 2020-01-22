@@ -77,7 +77,7 @@ export default () => {
 
   useEffect(() => {
     fetchData()
-  }, [fetchData])
+  }, [])
 
   const getOption = useCallback((hotspot = []) => {
     const routes = hotspot.map(spot => {
