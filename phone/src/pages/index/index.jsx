@@ -212,7 +212,7 @@ export default () => {
       <div className={styles['title']}>武汉新型冠状病毒肺炎热点追踪</div>
       <div className={styles['status']}>
         <div>确诊: {status['确诊']}</div>
-        <div>疑似: {status['疑似']}</div>
+        {/* <div>疑似: {status['疑似']}</div> */}
         <div>死亡: {status['死亡']}</div>
       </div>
     </div>
