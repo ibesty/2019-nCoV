@@ -268,7 +268,7 @@ class Index extends React.Component {
           },
           lineStyle: {
             normal: {
-              color: '#B00000',
+              color: '#3ed4ff',
               width: 0,
               curveness: 0.2
             }
@@ -290,7 +290,7 @@ class Index extends React.Component {
           },
           lineStyle: {
             normal: {
-              color: '#B00000',
+              color: '#3ed4ff',
               width: 1,
               opacity: 0.6,
               curveness: 0.2

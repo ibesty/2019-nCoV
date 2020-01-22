@@ -9,6 +9,7 @@ service.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 
 service.interceptors.request.use((config) => {
     config.headers['Cache-Control'] = 'no-cache';
+    config.headers['Access-Control-Allow-Origin'] = '*';
     return config;
 }, error => Promise.reject(error));
 
