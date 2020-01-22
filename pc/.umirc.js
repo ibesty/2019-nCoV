@@ -1,14 +1,15 @@
 
 // ref: https://umijs.org/config/
 export default {
+  history: 'hash',
   publicPath: './',
   treeShaking: true,
-  proxy: {
-    '/2019ncov': {
-      target: 'https://api.st.link/angelia',
-      changeOrigin: true
-    }
-  },
+  // proxy: {
+    // '/2019ncov': {
+    //   target: 'https://api.st.link/angelia',
+    //   changeOrigin: true
+    // }
+  // },
   routes: [
     {
       path: '/',
@@ -24,7 +25,7 @@ export default {
       antd: false,
       dva: false,
       dynamicImport: false,
-      title: 'pc',
+      title: '武汉肺炎',
       dll: false,
 
       routes: {
