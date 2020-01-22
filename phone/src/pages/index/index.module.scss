@@ -21,8 +21,13 @@
 
     .status {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       width: 100%;
+
+      > div {
+        min-width: 200px;
+        text-align: center;
+      }
     }
   }
 

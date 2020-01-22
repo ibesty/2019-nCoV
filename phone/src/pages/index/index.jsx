@@ -26,7 +26,7 @@ function setCitysCount(spots) {
   for (let s of spots) {
     const findedCity = citys.find(c => c.name.indexOf(s.to) > 0)
     if (findedCity) {
-      findedCity.symbolSize = Math.min(s.num, 8)
+      findedCity.symbolSize = Math.min(s.num, 5)
     } else {
       citys.push({
         name: s.from,
@@ -42,7 +42,7 @@ function setCitysCount(spots) {
     citys.push({
       name: s.to,
       value: getCityCoord(s.to),
-      "symbolSize": Math.min(s.num, 8),
+      "symbolSize": Math.min(s.num, 5),
       "itemStyle": {
         "normal": {
           "color": "red"
@@ -154,7 +154,7 @@ export default () => {
           show: true,
           position: 'right',
           formatter: '{b}',
-          fontSize: 6
+          fontSize: 8
         },
         // emphasis: {
         //   show: true,
@@ -209,7 +209,7 @@ export default () => {
   return (
     <div className={styles['index']}>
     <div className={styles['header']}>
-      <div className={styles['title']}>武汉新型冠状病毒肺炎热点追踪</div>
+      <div className={styles['title']}>武汉肺炎热点追踪</div>
       <div className={styles['status']}>
         <div>确诊：{status['确诊']}</div>
         {/* <div>疑似: {status['疑似']}</div> */}
