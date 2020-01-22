@@ -268,7 +268,7 @@ class Index extends React.Component {
           },
           lineStyle: {
             normal: {
-              color: color[i],
+              color: '#B00000',
               width: 0,
               curveness: 0.2
             }
@@ -314,7 +314,7 @@ class Index extends React.Component {
             }
           },
           symbolSize: function (val) {
-            return val[2] / 8;
+            return 10;
           },
           itemStyle: {
             normal: {
@@ -324,7 +324,7 @@ class Index extends React.Component {
           data: item[1].map(function (dataItem) {
             return {
               name: dataItem[1].name,
-              value: geoCoordMap[dataItem[1].name].concat([dataItem[1].value])
+              value: geoCoordMap[dataItem[1].name] ? geoCoordMap[dataItem[1].name].concat([dataItem[1].value]) : [114.3896, 30.6628, 0]
             };
           })
         });
@@ -347,7 +347,7 @@ class Index extends React.Component {
           if (params.seriesType === "effectScatter") {
             return "线路：" + params.data.name + "" + params.data.value[2];
           } else if (params.seriesType === "lines") {
-            return params.data.fromName + ">" + params.data.toName + "<br />" + params.data.value;
+            return params.data.fromName + "->" + params.data.toName + "<br />" + params.data.value + "例";
           } else {
             return params.name;
           }
@@ -402,7 +402,7 @@ class Index extends React.Component {
         {/*顶部navbar*/}
         <div className={styles.topNav}>
           <div className={styles.leftLogo}>
-            武汉肺炎
+            武汉肺炎nCoV
           </div>
           <div id="mySwiper" className="swiper-container">
             <div className="swiper-wrapper" style={{height: '100px'}}>
