@@ -1,0 +1,21 @@
+@import '~antd/dist/antd.css';
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/*.swiper-container {*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*  position: relative;*/
+/*  overflow: hidden;*/
+/*  list-style: none;*/
+/*  padding: 0;*/
+/*  z-index: 1;*/
+/*  --swiper-theme-color: #ff6600;*/
+/*  --swiper-pagination-color: #00ff33;!* 两种都可以 *!*/
+/*}*/
