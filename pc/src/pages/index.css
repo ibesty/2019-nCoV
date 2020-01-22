@@ -1,0 +1,46 @@
+.topNav {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  background: #183148;
+}
+.topNav > div {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.3%;
+}
+.topNav .leftLogo {
+  color: #B00000;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.news {
+  color: #ffffff;
+}
+
+.nums {
+  display: inline-flex;
+  font-size: 24px;
+}
+
+.myChart {
+  width: calc(100vw - 300px);
+  height: calc(100vh - 100px);
+}
+
+.content {
+  display: flex;
+}
+
+.rightContent {
+  width: 300px;
+  height: calc(100vh - 100px);
+  padding: 20px;
+  box-sizing: border-box;
+  background: #323C49;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
