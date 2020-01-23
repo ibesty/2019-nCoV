@@ -4,6 +4,7 @@ import axois from 'axios'
 import echarts from 'echarts'
 import 'echarts/map/js/china'
 import ReactEcharts from "echarts-for-react"
+import Div100vh from 'react-div-100vh'
 
 import styles from './index.module.scss'
 
@@ -207,24 +208,26 @@ export default () => {
   }, [spots])
 
   return (
-    <div className={styles['index']}>
-      <div className={styles['header']}>
-        <div className={styles['title']}>武汉肺炎热点追踪</div>
-        <div className={styles['status']}>
-          <div>确诊：{status['确诊']}</div>
-          {/* <div>疑似: {status['疑似']}</div> */}
-          <div>死亡：{status['死亡']}</div>
+    <Div100vh>
+      <div className={styles['index']}>
+        <div className={styles['header']}>
+          <div className={styles['title']}>武汉肺炎热点追踪</div>
+          <div className={styles['status']}>
+            <div>确诊：{status['确诊']}</div>
+            {/* <div>疑似: {status['疑似']}</div> */}
+            <div>死亡：{status['死亡']}</div>
+          </div>
         </div>
+        <ReactEcharts
+          id="map" className={styles['map']}
+          option={getOption(spots)}
+        />
+        <Timeline news={news} />
+        <div className={styles['footer']}>
+          <div className={styles['source']}>消息来源凤凰网 V2EX网友整理</div>
+        </div>
+        {/* <div id="map" className={styles['map']}></div> */}
       </div>
-      <ReactEcharts
-        id="map" className={styles['map']}
-        option={getOption(spots)}
-      />
-      <Timeline news={news} />
-      <div className={styles['footer']}>
-        <div className={styles['source']}>消息来源凤凰网 V2EX网友整理</div>
-      </div>
-      {/* <div id="map" className={styles['map']}></div> */}
-    </div>
+    </Div100vh>
   )
 }
