@@ -14,7 +14,7 @@ import Timeline from '../../components/timeline/index'
 const api = 'https://api.st.link/angelia/2019ncov'
 
 function getCityCoord(name) {
-  const city = window.citys.find(c => c.name.indexOf(name+'市') === 0 || c.name.indexOf(name+'县') === 0)
+  const city = window.citys.find(c => c.name.indexOf(name + '市') === 0 || c.name.indexOf(name + '县') === 0)
   if (city) {
     return city.lnglat
   }
@@ -208,19 +208,22 @@ export default () => {
 
   return (
     <div className={styles['index']}>
-    <div className={styles['header']}>
-      <div className={styles['title']}>武汉肺炎热点追踪</div>
-      <div className={styles['status']}>
-        <div>确诊：{status['确诊']}</div>
-        {/* <div>疑似: {status['疑似']}</div> */}
-        <div>死亡：{status['死亡']}</div>
+      <div className={styles['header']}>
+        <div className={styles['title']}>武汉肺炎热点追踪</div>
+        <div className={styles['status']}>
+          <div>确诊：{status['确诊']}</div>
+          {/* <div>疑似: {status['疑似']}</div> */}
+          <div>死亡：{status['死亡']}</div>
+        </div>
       </div>
-    </div>
       <ReactEcharts
         id="map" className={styles['map']}
         option={getOption(spots)}
       />
-      <Timeline news={news}/>
+      <Timeline news={news} />
+      <div className={styles['footer']}>
+        <div className={styles['source']}>消息来源凤凰网 V2EX网友整理</div>
+      </div>
       {/* <div id="map" className={styles['map']}></div> */}
     </div>
   )

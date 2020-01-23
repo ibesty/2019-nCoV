@@ -32,7 +32,32 @@
   }
 
   .map {
-    height: calc(45vh - 48px) !important;
+    height: calc(45vh - 48px - 48px) !important;
     width: 100vw;
+  }
+
+  .footer {
+    height: 48px;
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .developer {
+      display: flex;
+      color: #fff;
+      font-size: 12px;
+      padding-left: 10px;
+
+      a {
+        padding: 0 5px;
+      }
+    }
+
+    .source {
+      color: #fff;
+      font-size: 12px;
+    }
   }
 }
